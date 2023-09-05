@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="TaskMan.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <title>MY TaskMan</title>
+  <!-- navigation bar -->
+  <body style="background-color: #333">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <a class="navbar-brand" href="#">TaskMan</a>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" style="color: grey;" href="#">Home </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: black;" href="features.html">Features</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+</head>
+  <!-- page -->
+  <div class="container">
+    <div class="formpage">
+      <div class="form-group item">
+        <label for="exampleInputEmail1" style="color: grey;">Task's:-</label>
+        <input  style="background-color: lightgrey;" type="text" class="form-control"  id="title"  placeholder= "How can TaskMan help you?">
+      </div>
+      <div class="form-group description">
+          <label for="description" style="color: grey;">Detail:-</label>
+          <textarea required style="background-color: lightgray;" class="form-control" id="description" rows="3" placeholder= "Brief detail of the Task...." ></textarea >
+        </div>
+        <label style="color: grey;">Type Of Work:-</label>
+        <div  class="typeOfWork">
+          <select id="typeOfWork" style="background-color: lightgrey; color: black;">
+          <option style="background-color: lightgrey; color: black;">Personal</option>
+          <option style="background-color: lightgrey; color: black;">Family</option>
+          <option style="background-color: lightgrey; color: black;">Professional</option>
+        </select>
+        </div>
+        <div>
+          <label for="date" style="color:grey ;">Date</label>
+          <input style="background-color: lightgrey;" type="date" class="form-control" id="date" placeholder="#"></input>
+        </div>
+        <div style="display: flex;">
+        <button class="btn btn-primary "  id="add">Add to list</button>
+      <button class="btn btn-primary "  id="sort">Sort</button>
+      <button  id="clear" class="btn btn-primary " onclick="clearStorage()">Clear list</button>
+      <!-- voice search -->
+      <input style="width:100px;" type="text" id="search" placeholder="Voice Search">
+      <button id="voiceSearch" style="width: 100px; margin-right: 9%;">Voice Search</button>
+      <div id="voiceInputDisplay"></div>
+      <!-- <button id="voiceSearch" class="btn btn-primary" >Voice Search</button> -->
+
+      <!-- finish -->
+      <div class="search-box">
+      <button class="btn-search"><i class="fas fa-search"></i></button>
+      <input type="text" class="input-search" id="search " placeholder="Type to Search..." onkeyup="searchTasks()">
+      </div>
+
+      
+      
+</select>     
+    </div>
+    </div>  
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Status</th>
+          <th scope="col">Task's</th>
+          <th scope="col">Detail</th>
+          <th  scope="col">Type</th>
+          <th scop="col">Date</th>
+          <th scope="col" class="action"> Actions</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <tr>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
